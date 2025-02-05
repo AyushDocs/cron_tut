@@ -1,0 +1,26 @@
+name: Daily Commit Action
+
+on:
+  schedule:
+    # This cron expression runs the action once every day at 12:00 PM UTC
+    - cron: '0 12 * * *'
+
+jobs:
+  daily-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: 24f2004275@ds.study.iitm.ac.in
+        uses: actions/checkout@v2
+
+      # Add a commit with a timestamp to the repository
+      - name: Create daily commit with email 24f2004275@ds.study.iitm.ac.in
+        run: |
+          echo "Commit made on $(date)" >> commit_log.txt
+          git add commit_log.txt
+          git config user.name "GitHub Actions"
+          git config user.email "24f2004275@ds.study.iitm.ac.in"
+          git commit -m "Daily commit on $(date)"
+          git push
+
