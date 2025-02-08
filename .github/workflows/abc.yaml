@@ -3,7 +3,7 @@ name: Daily Commit Action
 on:
   schedule:
     # Runs every day at 7:00 AM UTC
-    - cron: '0 18 * * *'
+    - cron: '16 18 * * *'
 
 jobs:
   "jebdvddvdh":
@@ -13,15 +13,3 @@ jobs:
       # Checkout the code
       - name: 24f2004275@ds.study.iitm.ac.in
         uses: actions/checkout@v2
-
-      # Add a commit with a timestamp to the repository
-      - name: Create daily commit
-        run: |
-          echo "Commit made on $(date)" >> commit_log.txt
-          git add commit_log.txt
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git commit -m "Daily commit on $(date)"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
