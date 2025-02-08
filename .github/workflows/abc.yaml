@@ -3,15 +3,15 @@ name: Daily Commit Action
 on:
   schedule:
     # Runs every day at 7:00 AM UTC
-    - cron: '0 7 * * *'
+    - cron: '10 11 * * *'
 
 jobs:
-  "24f2004275@ds.study.iitm.ac.in":
+  "jebdvddvdh":
     runs-on: ubuntu-latest
 
     steps:
       # Checkout the code
-      - name: Checkout repository
+      - name: 24f2004275@ds.study.iitm.ac.in
         uses: actions/checkout@v2
 
       # Add a commit with a timestamp to the repository
